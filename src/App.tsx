@@ -2,7 +2,8 @@ import Section from "./components/Section";
 import Counter, { User } from "./components/Counter";
 import { useState, useEffect, useRef } from "react";
 import List from "./components/List";
-import { Link, BrowserRouter as Router, Route, } from "react-router-dom";
+import SideBar from "./components/Sidebar";
+
 
 
 
@@ -22,8 +23,9 @@ function App() {
   console.log("input ref current value: ",inputRef?.current?.value)
 
    return (
-    <Router>
+    <>
     <h1>Hello</h1>
+    <SideBar />
     <Section title="I am a title assigned from App()">
       Section children
     </Section>
@@ -51,7 +53,7 @@ function App() {
  
     <List items={items} render={(item: String) => <span className="gold">{item}</span>}/>
     
-    </Router>
+    </>
   )
 }
 export default App;
