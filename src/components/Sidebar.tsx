@@ -6,10 +6,12 @@
  * 
  */
 
+import { Outlet } from "react-router-dom";
+
 const SideBar = () => {
   return (
     <>
-     <div id="sidebar">
+     <div id="sidebar" className="border-solid border-2 border-cyan-400 rounded-lg bg-indigo-400">
         <h1>React Router Contacts</h1>
         <div>
           <form id="search-form" role="search">
@@ -31,7 +33,11 @@ const SideBar = () => {
             ></div>
           </form>
           <form method="post">
-            <button type="submit">New</button>
+            <button
+            className="mt-4 bg-orange-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" 
+            type="submit"
+            >New
+            </button>
           </form>
         </div>
         <nav>
@@ -46,6 +52,7 @@ const SideBar = () => {
         </nav>
       </div>
       <div id="detail">
+        <Outlet />
       </div>
     </>
   )

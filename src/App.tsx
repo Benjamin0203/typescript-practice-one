@@ -5,8 +5,6 @@ import List from "./components/List";
 import SideBar from "./components/Sidebar";
 
 
-
-
 function App() {
   const [count, setCount] = useState<number>(0);
   const [users, setUsers] = useState<User[] | null>(null);
@@ -24,8 +22,11 @@ function App() {
 
    return (
     <>
-    <h1>Hello</h1>
+    <div className="grid grid-flow-col auto-cols-max border-solid border-2 border-red-400">
     <SideBar />
+    </div>
+
+   <div className="grid grid-cols-4 m-4">
     <Section title="I am a title assigned from App()">
       Section children
     </Section>
@@ -46,13 +47,13 @@ function App() {
       }}>Submit input value</button>
     {
       <> 
-      <h2>Current Value: </h2>
+      <h1 className="text-red-600">Current Value: </h1>
       <p className="text-yellow-400">{inputValue}</p>
       </>
     }
  
     <List items={items} render={(item: String) => <span className="gold">{item}</span>}/>
-    
+    </div>
     </>
   )
 }

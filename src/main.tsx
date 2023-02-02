@@ -8,15 +8,27 @@ import {
 } from "react-router-dom";
 
 import Login from './components/Login';
+import ErrorPage from './routes/ErrorPage';
+import Contact from './routes/Contact';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      { 
+        path: "contacts/:contactId",
+        element: <Contact />,
+      }],
   },
   {
     path: "login",
     element: <Login />,
+  },
+  {
+    path: "contacts/:id",
+    element: <Contact />,
   }
 ]);
 

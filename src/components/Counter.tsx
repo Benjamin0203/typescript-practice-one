@@ -13,7 +13,7 @@ type CounterProps = {
 
 const Counter = ({ children, setCount, setUsers} : CounterProps) => {
   return (
-    <div className="flex space-x-10 justify-center">
+    <div className="flex space-x-10 justify-center border-solid border-2 border-sky-500 m-4 rounded-lg">
    <h1>{children}</h1>
     <button 
     className="min-w-auto w-32 h-10 bg-blue-300 p-2 rounded-xl hover:bg-blue-500 transition-colors duration-50 hover: animate-pulse ease-out text-white font-semibold"
